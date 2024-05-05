@@ -77,7 +77,7 @@ The approach initiates with a cascade of unconditional diffusion models that gen
 
 1. Apply the unconditional diffusion training model by executing `denoising.py -c ./config/Dn_128.yaml`, to perform noise reduction on specified low-resolution CT images. This process generates 128*128 low-resolution images, which are then saved in a designated output directory. Optionally, metrics can be computed to assess the model's performance, as illustrated in the following figure:
 
-   ![L067_0001](./images/test.png)
+   ![L067_0001](../images/test.png)
 
 2. `denoising.py -c ./config/Dn_128_512.yaml` for high-resolution denoising conditioned on low-res denoised images.
 
