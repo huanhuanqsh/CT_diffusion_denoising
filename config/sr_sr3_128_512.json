@@ -1,0 +1,53 @@
+{
+    "name": "sr_Liver_128_512",
+    "phase": "val", // train or val
+    "gpu_ids": [
+        0
+    ],
+    "path": { //set the path
+        "resume_state": "/mnt/dndp/experiments/Liver_128_512_sr3_x0_and_epsilon_240503_094033/checkpoint/I100000_E625"
+    },
+    "model": {
+        "which_model_G": "sr3", // use the ddpm or sr3 network structure
+        "mean_type": "x0_and_epsilon",
+        "finetune_norm": false,
+	"unet": {
+            "in_channel": 2,
+            "out_channel": 2,
+            "inner_channel": 64,
+            "channel_multiplier": [
+                1,
+                2,
+                4,
+                8,
+                8
+            ],
+            "attn_res": [
+                16, 8
+            ],
+            "res_blocks": 2,
+            "dropout": 0.2,
+            "patch_n": 2, // https://arxiv.org/abs/2207.04316
+            "patch_n_cond": 1
+        },
+        "beta_schedule": { // use munual beta_schedule for acceleration
+            "train": {
+                "schedule": "linear",
+                "n_timestep": 2000,
+                "linear_start": 1e-6,
+                "linear_end": 1e-2
+            },
+            "val": {
+                "schedule": "linear",
+                "n_timestep": 2000, //2000
+                "linear_start": 1e-6,
+                "linear_end": 1e-2
+            }
+        },
+        "diffusion": {
+            "image_size": 512,
+            "channels": 1, //sample channel
+            "conditional": true // unconditional generation or conditional generation(super_resolution)
+        }
+    }
+}
