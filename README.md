@@ -1,7 +1,7 @@
 # Report on Training of CT Image Denoising Diffusion Models Based on Open-Source Project Dn-Dp
 
 - [Introduction](#Introduction)
-- [Materials and Methods](#Materials and Methods)
+- [Materials and Methods](#MATERIALS-AND-METHODS)
 - [Results](#Results)
 - [Discussion](#Discussion)
 - [Conclusion](#Conclusion)
@@ -10,7 +10,7 @@
 
 ## Introduction
 
-In medical imaging, Low-Dose Computed Tomography (CT) is favored due to its low radiation exposure, yet introduces increased noise, compromising diagnostic accuracy and reliability. Denoising low-dose CT images is therefore crucial. Supervised deep learning methods have advanced in this field, presenting solutions. This report leverages the open-source project "Dn-Dp" [[1]] to introduce a novel zero-shot denoising approach for low-dose CT images via diffusion probabilistic priors, validated through experimental training.
+In medical imaging, Low-Dose Computed Tomography (CT) is favored due to its low radiation exposure, yet introduces increased noise, compromising diagnostic accuracy and reliability. Denoising low-dose CT images is therefore crucial. Supervised deep learning methods have advanced in this field, presenting solutions. This report leverages the open-source project "Dn-Dp" [[1]]([1]) to introduce a novel zero-shot denoising approach for low-dose CT images via diffusion probabilistic priors, validated through experimental training.
 
 ## Materials and Methods
 
